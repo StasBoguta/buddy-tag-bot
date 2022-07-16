@@ -1,38 +1,38 @@
 {
-  "@fi": {
-    "@kn": ["@witch_not_bitch","@wasja_wolk","@nedoedaev","@tomahawked"," @katya_bacha"],
-    "@pm": ["@VerbikYullya","@gfmmcin","@antianti06","@vika_shvchnk"],
-    "@ipz": ["@margoshiiik","@stasboguta","@iraaa_na","@oleksandr_101","@nhrysiuk"]
+  "@фі": {
+    "@кн": ["@witch_not_bitch","@wasja_wolk","@nedoedaev","@tomahawked"," @katya_bacha"],
+    "@пм": ["@VerbikYullya","@gfmmcin","@antianti06","@vika_shvchnk"],
+    "@іпз": ["@margoshiiik","@stasboguta","@iraaa_na","@oleksandr_101","@nhrysiuk"]
   },
-  "@fen": {
-    "@finance": ["@alinakrupianyk","@zbrvts","@lipofrenichka","@annakozlovska1"],
-    "@marketing": ["@itaptic","@volodymyrdodon","@polinalatysheva","@kuk_nika"],
-    "@management": ["@kateboklan","@nastia_shvydun","@sarcasticmood","@bbawy"],
-    "@economics": ["@drjakkyll","@hutkoo","@just_a_pilot","@geographicuss"]
+  "@фен": {
+    "@фінанси": ["@alinakrupianyk","@zbrvts","@lipofrenichka","@annakozlovska1"],
+    "@маркетинг": ["@itaptic","@volodymyrdodon","@polinalatysheva","@kuk_nika"],
+    "@менеджмент": ["@kateboklan","@nastia_shvydun","@sarcasticmood","@bbawy"],
+    "@економіка": ["@drjakkyll","@hutkoo","@just_a_pilot","@geographicuss"]
   },
-  "@fpvn": {
-    "@pravo": ["@ovchikk","@floashh","@rujutalapa","@kseniiabaraniuk","@volodymyr_ukr","@kryvytska","@oaaooammm","@kkrrnn","@arberlina","@mmzhukova","@anh_rozh"],
-    "@public": ["@lysromann","@furi_da_mu"]
+  "@фпвн": {
+    "@право": ["@ovchikk","@floashh","@rujutalapa","@kseniiabaraniuk","@volodymyr_ukr","@kryvytska","@oaaooammm","@kkrrnn","@arberlina","@mmzhukova","@anh_rozh"],
+    "@публічне": ["@lysromann","@furi_da_mu"]
   },
-  "@fsnst": {
-    "@psycho": ["@valeriia_den","@moose_mossy"],
-    "@socio": ["@groombl","@ravnest","@blavatooka","@SofiiaHryazon","@kat_tarasyuk","@zirnichny"],
-    "@socrob": ["@buremny","@honchouch","@ann_zhukovaa","@prarrots"],
-    "@miznar": ["@vzliotny","@rytaatata","@justyasiaaa","@a_temch"],
-    "@gromada": ["@sofia_kysil","@daryaga","@anna_fonotova","@dari_yash"],
-    "@polyt": ["@sophisticatedmess","@kmariiana","@sofiiaboklan","@polyesterrr"]
+  "@фснст": {
+    "@психологія": ["@valeriia_den","@moose_mossy"],
+    "@соціологія": ["@groombl","@ravnest","@blavatooka","@SofiiaHryazon","@kat_tarasyuk","@zirnichny"],
+    "@соцроб": ["@buremny","@honchouch","@ann_zhukovaa","@prarrots"],
+    "@міжнар": ["@vzliotny","@rytaatata","@justyasiaaa","@a_temch"],
+    "@громадське": ["@sofia_kysil","@daryaga","@anna_fonotova","@dari_yash"],
+    "@політологія": ["@sophisticatedmess","@kmariiana","@sofiiaboklan","@polyesterrr"]
   },
-  "@fprn": {
-    "@chemist": ["@mariafrosivna","@popelianska"],
-    "@physics": ["@Tone_4ka","@johann_ww"],
-    "@eco": ["@nadich_ka","@yevheniiaantonivna"],
-    "@bio": ["@lisselka","@nnnikolaieva","@nadyayts"]
+  "@фпрн": {
+    "@хімія": ["@mariafrosivna","@popelianska"],
+    "@фізика": ["@Tone_4ka","@johann_ww"],
+    "@екологія": ["@nadich_ka","@yevheniiaantonivna"],
+    "@біологія": ["@lisselka","@nnnikolaieva","@nadyayts"]
   },
-  "@fgn": {
-    "@german": ["@bodiavon","@ccchainssaw","@mia_torm","@melanchore","@JuliaSimkina"],
-    "@ukr": ["@pinkneighbour","@dee_chubay","@sydiakk","@sofia_kmet","@annapogorielova"],
-    "@philos": ["@liuko","@qrst_qrst","@urmpnrk","@gaaloyaan"],
-    "@kult": ["@anastasssisia","@kit_stepanovych","@dsh_blssm","@btmth"],
-    "@history": ["@prosto100sto","@yaratravnikova","@cawul34ka","@g1e6235"]
+  "@фгн": {
+    "@генрманьска": ["@bodiavon","@ccchainssaw","@mia_torm","@melanchore","@JuliaSimkina"],
+    "@українська": ["@pinkneighbour","@dee_chubay","@sydiakk","@sofia_kmet","@annapogorielova"],
+    "@філософія": ["@liuko","@qrst_qrst","@urmpnrk","@gaaloyaan"],
+    "@культурологія": ["@anastasssisia","@kit_stepanovych","@dsh_blssm","@btmth"],
+    "@історія": ["@prosto100sto","@yaratravnikova","@cawul34ka","@g1e6235"]
   }
 }

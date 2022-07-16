@@ -12,7 +12,7 @@ from aiogram import Bot, Dispatcher, executor, types
 API_TOKEN = '5588729871:AAE_3Y1i4w321rWaLj9f_83myMlFhbV9wHQ'
 CHATS_SET = [-1001785608646]
 
-f = open('tags.json')
+f = open('tags.json', encoding="utf8")
 TAG_SET = json.load(f)
 f.close()
 

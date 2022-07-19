@@ -90,7 +90,11 @@ async def tag_users(message: types.Message):
                     tag_arr = tag_arr + people
             index = random.randint(0, len(tag_arr))
             men = tag_arr[index]
-            await message.reply(f'Тобі повинен кинути нюдси {men}')
+            action = random.uniform(0,1)
+            if action <= 0.2:
+                await message.reply("Хуй тобі а не нюдси. Кидай свої!!!")
+            else:
+                await message.reply(f'Тобі повинен кинути нюдси {men}')
         elif tag != "@all":
             if tag in list(TAG_SET.keys()):
                 for tag_set in TAG_SET[tag].values():

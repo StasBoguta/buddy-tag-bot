@@ -5,6 +5,7 @@ It echoes any incoming text messages.
 import logging
 import re
 import json
+import random
 
 
 from aiogram import Bot, Dispatcher, executor, types
@@ -46,6 +47,7 @@ async def send_help(message: types.Message):
 async def send_more_help(message: types.Message):
     text = """
 *Доступні команди для дудоса Бадді 2022*\n
+@нюдси - тегає одного Бадді, який повиннен тобі кинути нюдси\n
 @all - задудосити всіх бадді\n
 ФІ
 @фі - фішники
@@ -71,8 +73,8 @@ async def send_more_help(message: types.Message):
 
 @dp.message_handler(regexp='@')
 async def tag_users(message: types.Message):
-    if message.chat.id not in CHATS_SET:
-        return
+    # if message.chat.id not in CHATS_SET:
+    #     return
     txt = message.text
     matches = re.finditer(regex, txt, re.MULTILINE)
     tags = set()
@@ -80,7 +82,15 @@ async def tag_users(message: types.Message):
         tags.add(match.group().strip())
     for tag in tags:
         tags_arr = []
-        if tag != "@all":
+        if tag == "@нюдси":
+            tag_arr = []
+            for speciality in TAG_SET.values():
+                for people in speciality.values():
+                    tag_arr = tag_arr + people
+            index = random.randint(0, len(tag_arr))
+            men = tag_arr[index]
+            await message.reply(f'Тобі повинен кинути нюдси {men}')
+        elif tag != "@all":
             if tag in list(TAG_SET.keys()):
                 for tag_set in TAG_SET[tag].values():
                     tags_arr = tags_arr + tag_set

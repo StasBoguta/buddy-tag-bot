@@ -91,7 +91,9 @@ async def tag_users(message: types.Message):
             index = random.randint(0, len(tag_arr))
             men = tag_arr[index]
             action = random.uniform(0,1)
-            if action <= 0.2:
+            if action <= 0.05:
+                await message.reply("Шось ти дуже хорні. Піди понизь хорніградус https://www.pornhub.com")
+            elif action <= 0.2:
                 await message.reply("Хуй тобі а не нюдси. Кидай свої!!!")
             else:
                 await message.reply(f'Тобі повинен кинути нюдси {men}')

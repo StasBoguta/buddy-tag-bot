@@ -11,6 +11,7 @@ import random
 from aiogram import Bot, Dispatcher, executor, types
 
 API_TOKEN = '5588729871:AAE_3Y1i4w321rWaLj9f_83myMlFhbV9wHQ'
+# API_TOKEN = '1698570040:AAGvmUeVtpTKw18dn-VlTUAXDT04vWp-uhI'
 CHATS_SET = [-1001785608646]
 
 f = open('tags.json', encoding="utf8")
@@ -73,8 +74,8 @@ async def send_more_help(message: types.Message):
 
 @dp.message_handler(regexp='@')
 async def tag_users(message: types.Message):
-    if message.chat.id not in CHATS_SET:
-        return
+    # if message.chat.id not in CHATS_SET:
+    #     return
     txt = message.text
     matches = re.finditer(regex, txt, re.MULTILINE)
     tags = set()
@@ -119,6 +120,36 @@ async def tag_users(message: types.Message):
             else:
                 reply_text = "\n".join(tags_arr)
                 await message.reply(f'Люди за тегом {tag}:\n{reply_text}')
+
+
+@dp.message_handler(regexp='^Стас Богута')
+async def creator_reply(message: types.Message):
+    await message.reply(f'Абонен не може прийняти ваш виклик, або знаходиться поза мережею. Виклик абонента @stasboguta')
+
+
+@dp.message_handler(regexp='(П|п)іздєц|єбанутся')
+async def pizdec_reply(message: types.Message):
+    await message.reply_sticker('CAACAgIAAxkBAAEFT8Zi1llLBedXn3TXXMDebZQeIMEyMQACXBIAAiRhqUtZjwhZKLtMhCkE')
+
+
+@dp.message_handler(regexp='(К|к)апібалицький|(Б|б)алицький|(К|к)оординатор (Б|б)адді')
+async def pizdec_reply(message: types.Message):
+    await message.reply_sticker('CAACAgIAAxkBAAEFT8pi1lqDBJ2zWAYqU6KjtWm1wnKNvQACRxIAApn9uEhCchH2JItcEikE')
+
+
+@dp.message_handler(regexp='(Т|т)ернопіль')
+async def pizdec_reply(message: types.Message):
+    await message.reply_sticker('CAACAgQAAxkBAAEFT8hi1lpj3UTgMOhL8cECZY-AYc66_AACewADzMbLEbHdXkGD-IiFKQQ')
+
+
+@dp.message_handler(regexp="(А|а)ліна (К|к)руп('|`|')яник|(С|с)аша (Т|т)емч|(Т|т)емч")
+async def pizdec_reply(message: types.Message):
+    await message.reply('🔪🔪🔪🔪🔪')
+
+
+@dp.message_handler(regexp='ніхуя собі')
+async def all_message(message: types.Message):
+    await message.reply_sticker('CAACAgIAAxkBAAEFT8xi1lucgRpIW2DF0uvltzzrOIzGkAACJBIAAnHAqUs-5_J9etWXeCkE')
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=False)

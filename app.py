@@ -127,7 +127,7 @@ async def tag_users(message: types.Message):
                 await message.reply(f'Люди за тегом {tag}:\n{reply_text}')
 
 
-@dp.message_handler(regexp='^Стас Богута')
+@dp.message_handler(regexp='^(С|с)тас (Б|б)огута')
 async def creator_reply(message: types.Message):
     messages = ['Абонен не може прийняти ваш виклик, або знаходиться поза мережею. Виклик абонента @stasboguta',
                 'Стас Богута вмер, не шукай його',

@@ -73,8 +73,8 @@ async def send_more_help(message: types.Message):
 
 @dp.message_handler(regexp='@')
 async def tag_users(message: types.Message):
-    # if message.chat.id not in CHATS_SET:
-    #     return
+    if message.chat.id not in CHATS_SET:
+        return
     txt = message.text
     matches = re.finditer(regex, txt, re.MULTILINE)
     tags = set()

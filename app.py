@@ -129,12 +129,20 @@ async def creator_reply(message: types.Message):
 
 @dp.message_handler(regexp='(П|п)іздєц|єбанутся')
 async def pizdec_reply(message: types.Message):
-    await message.reply_sticker('CAACAgIAAxkBAAEFT8Zi1llLBedXn3TXXMDebZQeIMEyMQACXBIAAiRhqUtZjwhZKLtMhCkE')
+    stickers = ['CAACAgIAAxkBAAEFT8Zi1llLBedXn3TXXMDebZQeIMEyMQACXBIAAiRhqUtZjwhZKLtMhCkE',
+                'CAACAgIAAxkBAAEFT_Bi1nd8CGxgjVPqRqDshn5PbfRIcAAC2BEAAmlDsEs7-qC9ghIJ3ikE',
+                'CAACAgIAAxkBAAEFT_Ji1neR7eN66hYZXtjoVrGUhLZxowACJBAAAnSauEhlTY5LdL1UJikE']
+    sticker = random.choice(stickers)
+    await message.reply_sticker(sticker)
 
 
 @dp.message_handler(regexp='(К|к)апібалицький|(Б|б)алицький|(К|к)оординатор (Б|б)адді')
 async def pizdec_reply(message: types.Message):
-    await message.reply_sticker('CAACAgIAAxkBAAEFT8pi1lqDBJ2zWAYqU6KjtWm1wnKNvQACRxIAApn9uEhCchH2JItcEikE')
+    stickers = ['CAACAgIAAxkBAAEFT8pi1lqDBJ2zWAYqU6KjtWm1wnKNvQACRxIAApn9uEhCchH2JItcEikE',
+                'CAACAgIAAxkBAAEFT_Ri1nfWXWRjxDIOF8qivU06Q8lb0QACwxEAAk-asUsvJkUU0fhUmykE',
+                'CAACAgIAAxkBAAEFT_Zi1nf8XYGgwLtaCEF1WFaLSn0IEQACdBAAAj6huUh-orbJwLdyhSkE']
+    sticker = random.choice(stickers)
+    await message.reply_sticker(sticker)
 
 
 @dp.message_handler(regexp='(Т|т)ернопіль')
@@ -149,7 +157,11 @@ async def pizdec_reply(message: types.Message):
 
 @dp.message_handler(regexp='ніхуя собі')
 async def all_message(message: types.Message):
-    await message.reply_sticker('CAACAgIAAxkBAAEFT8xi1lucgRpIW2DF0uvltzzrOIzGkAACJBIAAnHAqUs-5_J9etWXeCkE')
+    stickers = ['CAACAgIAAxkBAAEFT8xi1lucgRpIW2DF0uvltzzrOIzGkAACJBIAAnHAqUs-5_J9etWXeCkE',
+                'CAACAgIAAxkBAAEFT_hi1ng7E4B-65WuotOr5RKwOsBhwQACSBIAAqoGqEsnRTpd84G1tCkE',
+                'CAACAgIAAxkBAAEFT_pi1nhRs0WduPUqtQoK1Bmw1CRTOgACHxMAAjdVsUveVPgXTCrXzSkE']
+    sticker = random.choice(stickers)
+    await message.reply_sticker(sticker)
 
 
 @dp.message_handler(regexp='(С|с)екс')

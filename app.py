@@ -177,5 +177,10 @@ async def all_message(message: types.Message):
     await message.reply('Якщо секс, то краще жосткій')
     await message.reply_sticker('CAACAgIAAxkBAAEFT-Vi1m6y9EU-pfcgaVLYfR5e2Da21gAClQ8AAvhcsEiIoYxQTB4dgykE')
 
+
+@dp.message_handler(regexp='!!!!!')
+async def all_message(message: types.Message):
+    await message.reply('Шо ти ото волаєш!!!!!!!!!!')
+
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=False)

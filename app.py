@@ -151,5 +151,11 @@ async def pizdec_reply(message: types.Message):
 async def all_message(message: types.Message):
     await message.reply_sticker('CAACAgIAAxkBAAEFT8xi1lucgRpIW2DF0uvltzzrOIzGkAACJBIAAnHAqUs-5_J9etWXeCkE')
 
+
+@dp.message_handler(regexp='(С|с)екс')
+async def all_message(message: types.Message):
+    await message.reply('Якщо секс, то краще жосткій')
+    await message.reply_sticker('CAACAgIAAxkBAAEFT-Vi1m6y9EU-pfcgaVLYfR5e2Da21gAClQ8AAvhcsEiIoYxQTB4dgykE')
+
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=False)

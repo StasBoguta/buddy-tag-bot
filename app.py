@@ -93,7 +93,7 @@ async def tag_users(message: types.Message):
             if action <= 0.05:
                 await message.reply("Шось ти дуже хорні. Піди понизь хорніградус https://www.pornhub.com")
             elif action <= 0.2:
-                await message.reply("Хуй тобі а не нюдси. Кидай свої!!!")
+                await message.reply("А всьо, а тепер ти винен нюдси. Кидай свої!!!")
             else:
                 await message.reply(f'Тобі повинен кинути нюдси {men}')
         elif tag != "@all":

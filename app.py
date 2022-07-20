@@ -6,6 +6,7 @@ import logging
 import re
 import json
 import random
+from taro import TARO_SET
 
 
 from aiogram import Bot, Dispatcher, executor, types
@@ -26,6 +27,14 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
 regex = r"[\s]*@[^\s]+[\s]*"
+
+
+async def get_all_tag():
+    tag_arr = []
+    for speciality in TAG_SET.values():
+        for people in speciality.values():
+            tag_arr = tag_arr + people
+    return tag_arr
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
@@ -72,6 +81,42 @@ async def send_more_help(message: types.Message):
     await bot.send_message(message.chat.id, text, parse_mode='Markdown')
 
 
+@dp.message_handler(regexp='@піво')
+async def nudes(message: types.Message):
+    if message.chat.id not in CHATS_SET:
+        return
+    tag_arr = await get_all_tag()
+    men = random.choice(tag_arr)
+    action = random.uniform(0, 1)
+    if action <= 0.1:
+        await message.reply(f"Ти торчиш бочку горючого напою для {men}")
+    elif action <= 0.5:
+        await message.reply(f"Тобі {men} торчить літру алкоголю")
+    else:
+        await message.reply(f"Ви з {men} повинні сходити на піво")
+
+
+@dp.message_handler(regexp='@картадня')
+async def taro(message: types.Message):
+    taro_id = random.choice(TARO_SET)
+    await message.reply_sticker(taro_id)
+
+
+@dp.message_handler(regexp='@нюдси')
+async def nudes(message: types.Message):
+    if message.chat.id not in CHATS_SET:
+        return
+    tag_arr = await get_all_tag()
+    men = random.choice(tag_arr)
+    action = random.uniform(0, 1)
+    if action <= 0.05:
+        await message.reply("Шось ти дуже хорні. Піди понизь хорніградус")
+    elif action <= 0.2:
+        await message.reply("А всьо, а тепер ти винен нюдси. Кидай свої!!!")
+    else:
+        await message.reply(f'Тобі повинен кинути нюдси {men}')
+
+
 @dp.message_handler(regexp='@')
 async def tag_users(message: types.Message):
     if message.chat.id not in CHATS_SET:
@@ -83,20 +128,7 @@ async def tag_users(message: types.Message):
         tags.add(match.group().strip())
     for tag in tags:
         tags_arr = []
-        if tag == "@нюдси":
-            tag_arr = []
-            for speciality in TAG_SET.values():
-                for people in speciality.values():
-                    tag_arr = tag_arr + people
-            men = random.choice(tag_arr)
-            action = random.uniform(0,1)
-            if action <= 0.05:
-                await message.reply("Шось ти дуже хорні. Піди понизь хорніградус")
-            elif action <= 0.2:
-                await message.reply("А всьо, а тепер ти винен нюдси. Кидай свої!!!")
-            else:
-                await message.reply(f'Тобі повинен кинути нюдси {men}')
-        elif tag != "@all":
+        if tag != "@all":
             if tag in list(TAG_SET.keys()):
                 for tag_set in TAG_SET[tag].values():
                     tags_arr = tags_arr + tag_set
@@ -107,9 +139,7 @@ async def tag_users(message: types.Message):
                 if tag in speciality_all.keys():
                     tags_arr = tags_arr + speciality_all[tag]
         else:
-            for speciality in TAG_SET.values():
-                for people in speciality.values():
-                    tags_arr = tags_arr + people
+            tags_arr = await get_all_tag()
 
         if len(tags_arr) != 0:
             if len(tags_arr) > 5:
@@ -127,10 +157,9 @@ async def tag_users(message: types.Message):
                 await message.reply(f'Люди за тегом {tag}:\n{reply_text}')
 
 
-@dp.message_handler(regexp='^(С|с)тас (Б|б)огута')
+@dp.message_handler(regexp='^(С|с)тас[а]* (Б|б)огут(а|у)')
 async def creator_reply(message: types.Message):
-    messages = ['Абонен не може прийняти ваш виклик, або знаходиться поза мережею. Виклик абонента @stasboguta',
-                'Стас Богута вмер, не шукай його',
+    messages = ['Стас Богута вмер, не шукай його',
                 'Мда, треш', 'Краще кинь йому нюдси', 'Кіс-кіс кіс-кіс я котік ти котік...', '🥵']
     await message.reply(random.choice(messages))
 
@@ -196,6 +225,16 @@ async def all_message(message: types.Message):
 @dp.message_handler(regexp='(Х|х)уй')
 async def all_message(message: types.Message):
     await message.reply('Не псіхуй')
+
+
+@dp.message_handler(regexp='(М|м)а(ма|тір|ть|мчик|зер)')
+async def all_message(message: types.Message):
+    messages = [
+        'Я дуже люблю твою маму','Мать то хорошо, особливо твоя','Ну не мамкай',
+        'А ти знаєш де я сьогодні був?'
+    ]
+    await message.reply(random.choice(messages))
+
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=False)

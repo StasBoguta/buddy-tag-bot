@@ -192,5 +192,10 @@ async def all_message(message: types.Message):
 async def all_message(message: types.Message):
     await message.reply('Реально бляді')
 
+
+@dp.message_handler(regexp='(Х|х)уй')
+async def all_message(message: types.Message):
+    await message.reply('Не псіхуй')
+
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=False)

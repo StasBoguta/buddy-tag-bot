@@ -158,7 +158,7 @@ async def pizdec_reply(message: types.Message):
     await message.reply_sticker('CAACAgQAAxkBAAEFT8hi1lpj3UTgMOhL8cECZY-AYc66_AACewADzMbLEbHdXkGD-IiFKQQ')
 
 
-@dp.message_handler(regexp="(А|а)ліна (К|к)руп('|`|')яник|(С|с)аша (Т|т)емч|(Т|т)емч")
+@dp.message_handler(regexp="(А|а)ліна (К|к)руп('|`|')яник|(С|с)аша (Т|т)емч|(Т|т)емч|(Н|н)(іж|ожі)")
 async def pizdec_reply(message: types.Message):
     await message.reply('🔪🔪🔪🔪🔪')
 

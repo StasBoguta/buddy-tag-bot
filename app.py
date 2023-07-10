@@ -156,25 +156,25 @@ async def send_more_help(message: types.Message):
 #     except:
 #         pass
 
-@dp.message_handler(regexp='@піво')
-async def nudes(message: types.Message):
-    # if message.chat.id not in CHATS_SET:
-    #     return
-    check = await check_id(message, BEER_TIMES, BEER_DUPLICATE)
-    if not check:
-        if not BEER_DUPLICATE[message.from_id]:
-            await message.reply("Іди трезвій! Потім повернешся за пивом!")
-        BEER_DUPLICATE[message.from_id] = True
-    else:
-        tag_arr = await get_all_tag()
-        men = random.choice(tag_arr)
-        action = random.uniform(0, 1)
-        if action <= 0.1:
-            await message.reply(f"Ти торчиш бочку горючого напою для {men}")
-        elif action <= 0.5:
-            await message.reply(f"Тобі {men} торчить літру алкоголю")
-        else:
-            await message.reply(f"Ви з {men} повинні сходити на піво")
+# @dp.message_handler(regexp='@піво')
+# async def nudes(message: types.Message):
+#     # if message.chat.id not in CHATS_SET:
+#     #     return
+#     check = await check_id(message, BEER_TIMES, BEER_DUPLICATE)
+#     if not check:
+#         if not BEER_DUPLICATE[message.from_id]:
+#             await message.reply("Іди трезвій! Потім повернешся за пивом!")
+#         BEER_DUPLICATE[message.from_id] = True
+#     else:
+#         tag_arr = await get_all_tag()
+#         men = random.choice(tag_arr)
+#         action = random.uniform(0, 1)
+#         if action <= 0.1:
+#             await message.reply(f"Ти торчиш бочку горючого напою для {men}")
+#         elif action <= 0.5:
+#             await message.reply(f"Тобі {men} торчить літру алкоголю")
+#         else:
+#             await message.reply(f"Ви з {men} повинні сходити на піво")
 
 
 # @dp.message_handler(regexp='@картадня')
@@ -195,23 +195,23 @@ async def check_id(message: types.Message, array, checker):
     return False
 
 
-@dp.message_handler(regexp='@нюдси')
-async def nudes(message: types.Message):
-    check = await check_id(message, NUDES_TIMES, NUDES_DUPLICATE)
-    if not check:
-        if not NUDES_DUPLICATE[message.from_id]:
-            await message.reply("Багато нюдсів просити погано! Май совість! Попроси пізніше")
-        NUDES_DUPLICATE[message.from_id] = True
-    else:
-        tag_arr = await get_all_tag()
-        men = random.choice(tag_arr)
-        action = random.uniform(0, 1)
-        if action <= 0.05:
-            await message.reply("Шось ти дуже хорні. Піди понизь хорніградус")
-        elif action <= 0.2:
-            await message.reply("А всьо, а тепер ти винен нюдси. Кидай свої!!!")
-        else:
-            await message.reply(f'Тобі повинен кинути нюдси {men}')
+# @dp.message_handler(regexp='@нюдси')
+# async def nudes(message: types.Message):
+#     check = await check_id(message, NUDES_TIMES, NUDES_DUPLICATE)
+#     if not check:
+#         if not NUDES_DUPLICATE[message.from_id]:
+#             await message.reply("Багато нюдсів просити погано! Май совість! Попроси пізніше")
+#         NUDES_DUPLICATE[message.from_id] = True
+#     else:
+#         tag_arr = await get_all_tag()
+#         men = random.choice(tag_arr)
+#         action = random.uniform(0, 1)
+#         if action <= 0.05:
+#             await message.reply("Шось ти дуже хорні. Піди понизь хорніградус")
+#         elif action <= 0.2:
+#             await message.reply("А всьо, а тепер ти винен нюдси. Кидай свої!!!")
+#         else:
+#             await message.reply(f'Тобі повинен кинути нюдси {men}')
 
 
 @dp.message_handler(regexp='@')

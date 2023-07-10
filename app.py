@@ -14,7 +14,7 @@ import time
 
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5588729871:AAE_3Y1i4w321rWaLj9f_83myMlFhbV9wHQ'
+API_TOKEN = '6398529134:AAF_sjdT7R9yBnTayoqaXsuqUYbQjgI3e4c'
 # API_TOKEN = '1698570040:AAGvmUeVtpTKw18dn-VlTUAXDT04vWp-uhI'
 # CHATS_SET = [-1001785608646]
 
